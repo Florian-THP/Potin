@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Créer un potin</title>
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+  </head>
+  <body>
+    <div class="menu">
+      <div class="divlien">
+        <a href="#" class="lien">Accueil</a>
+      </div>
+      <div class="divbtnmenu">
+        <a href="/gossip/new/" class="newbtn">
+          New Potin
+          <img class="plusbtn" src="/img/plus.png">
+        </a>
+      </div>
+    </div>
+
+    <h1>Des <span class="motviolet">potins</span> sans Limites.</h1>
+
+    <div class="potinliste">
+      <% gossips.each_with_index do |gossip, index| %>
+        <div class="potindiv">
+          <div class="potinauteur">
+            <h2>
+              <img class="userimg" src="/img/anonyme.png">
+              <%= gossip.author %>
+            </h2>
+            <p class="idpotin">#<%= index + 1 %></p>
+          </div>
+          <p class="potintext"><%= gossip.content %><br/></p>
+          <p class="btnvoir">
+            <a href="/gossips/<%= index %>" class="voir">
+              Voir
+              <img class="voirimg" src="/img/voir.png">
+            </a>
+          </p>
+        </div>
+      <% end %>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Créer un potin</title>
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+  </head>
+  <body>
+
+    <div class="menu">
+      <div class="divlien">
+        <a href="/" class="lien">Accueil</a>
+      </div>
+      <div class="divbtnmenu">
+        <a href="/gossip/new/" class="newbtn">
+          New Potin
+          <img class="plusbtn" src="/img/plus.png">
+        </a>
+      </div>
+    </div>
+
+    <div class="potin">
+      <div class="potinauteur">
+        <h2>
+          <img class="userimg" src="/img/anonyme.png">
+          <%= gossip.author %>
+        </h2>
+        <p class="idpotin">#<%= id + 1 %></p>
+      </div>
+      
+      <p class="potintext"><%= gossip.content %><br/></p>
+      
+      <p class="btnvoir">
+        <a href="/gossips/<%= id %>/edit/" class="edit">éditer le potin</a>
+      </p>
+      
+      <p class="potintext">Commentaires :</p>
+      
+      <div class="commentaire">
+        <ul>
+          <% gossip.comments.each do |comment| %>
+            <li><%= comment %></li>
+          <% end %>
+        </ul>
+
+        <form class="formcom" action="/gossips/<%= id %>/comentaire/edit" method='POST'>
+          <div class="barcom">
+            <input class="inputcom" type='text' name='commentaire' placeholder="Entrer votre commentaire ici..."/>
+            <input class="btnajouter" value="Poster" type='submit'/>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  </body>
+</html>

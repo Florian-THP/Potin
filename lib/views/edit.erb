@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Créer un potin</title>
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+  </head>
+  <body>
+    <h1>Edit Page</h1>
+
+    <div class="potindiv">
+      <form action="/gossips/modif/<%= id %>" method='POST'>
+        <br/>
+        <p class="marginleft">Son auteur :</p>
+        <input class="inputedit" value="<%= gossip.author %>" type='text' name='gossip_author'/><br/>
+        <br/>
+        <p class="marginleft">Le contenu du potin :</p>
+        <input class="inputedit" value="<%= gossip.content %>" type='text' name='gossip_content'/><br/>
+        <div class="btnvoir">
+          <input class="modifier" value="Modifier" type='submit'/>
+        </div>
+      </form>
+    </div>
+    
+  </body>
+</html>

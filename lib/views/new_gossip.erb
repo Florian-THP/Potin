@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Créer un potin</title>
+    <link rel="stylesheet" type="text/css" href="/styles/index.css">
+
+  </head>
+  <body>
+    <h1>Crée un potin !</h1>
+    <div class="potindiv">
+    <p class="marginleft">Balance ton potin via le formulaire ci-dessous</>
+    <form action='/gossips/save/' method='POST'>
+      <p class="marginleft">Saisi ici ton nom :</p>
+        <input class="inputedit" type='text' name='gossip_author'/><br/>
+           <p class="marginleft">Balance ton potin : </p>
+          <input  class="inputedit"type='text' name='gossip_content'/><br/>
+           <div class="btnvoir">
+      <input class="modifier" type='submit' value="enregistrer"/>
+      </div>
+    </form>
+    </div>
+  </body>
+</html>
